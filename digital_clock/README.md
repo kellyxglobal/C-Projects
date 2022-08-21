@@ -1,0 +1,1 @@
+Digital Calculator is a simple project built in C where you can enter the digit of time; seconds, minutes, and hour. The time starts counting based on the values you entered. You can fork and try it out yourself
