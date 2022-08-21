@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <windows.h>
-#include <dos.h>
-#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
 int main()
 {
 	int hour, minute, second;
-	int delay = 1000; //Use for adding a delay of one thousand millisec
 
 	//Request a user to set the time
 	printf("Please, kindly set the time below by entering the values for hour. minutes, and seconds: \n");
@@ -16,6 +14,30 @@ int main()
 	if(hour > 12 || minute > 60 || second > 60)
 	{
 		printf("Error: You exceeded the required value for time. Incorrect value");
-		exit();
+	}else 
+	{
+		while(1)
+		{
+			second++;
+			if(second > 59)
+			{
+				minute++;
+				second = 0;
+			}
+			if(minute > 59)
+			{
+				hour++;
+				minute = 0;
+			}
+			if(hour > 12)
+			{
+				hour = 1;
+			}
+			printf("Clock: \n");
+			printf("%02d:%02d:%02d \n", hour,minute,second);//This writes out the time format in 00:00:00
+			system("clear");
+			delay_ms(1000);
+		}
+	}
+}
 
-	
