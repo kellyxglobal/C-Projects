@@ -17,5 +17,28 @@ int main()
 	{
 		printf("Error: You exceeded the required value for time. Incorrect value");
 		exit();
+		while(1)
+		{
+			second++;
+			if(second > 59)
+			{
+				minute++;
+				second = 0;
+			}
+			if(minute > 59)
+			{
+				hour++;
+				minute = 0;
+			}
+			if(hour > 12)
+			{
+				hour = 1;
+			}
+			printf("\n Clock: ");
+			printf("\n %02d:%02d:%02d", hour,minute,second);//This writes out the time format in 00:00:00
+			sleep(delay);//This function slows down the while loop
+			system(cls);
+		}
+	}
 
 	
