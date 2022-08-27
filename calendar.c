@@ -9,20 +9,20 @@
  
 int main() 
 {
-	int year;
+	int year, month;
 
 	//Step: Accept users input
 	printf("\nPlease, enter the year for the calenday\n");
-	scanf("%d", &year);
+	scanf("\n%d", &year);
 
 	//Step 2: Create a character- array pointer to store all the months in a year
-	char *months = {"Jan","Mar","Feb","Apr","May","june","Jul","Aug","Sept","Oct","Nov","Dec"};
+	char *months[] = {"Jan","Feb","Mar","Apr","May","june","Jul","Aug","Sept","Oct","Nov","Dec"};
 
 	//Step 3: Display all the months in one column by passing an increament to the variable pointer array
 	for(month=0; month<12; month++)
 	{
-		printf("--------------------%s--------------------\n", months[month]);
-		printf("---Sun. Mon. Tue. Wed. Thurs. Fri. Sat---");
+		printf("\n--------------------%s--------------------\n", months[month]);
+		printf("---Sun. Mon. Tue. Wed. Thurs. Fri. Sat---\n\n");
 	}
 }
 
