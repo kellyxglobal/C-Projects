@@ -33,7 +33,7 @@ int main()
 		//Steps 6: Display Days in all months via a loop
 		for (day=1; day<=days_Of_Months; day++)
 		{
-			printf("%d", day);
+			printf("%5d", day);
 		}
 	}
 }
