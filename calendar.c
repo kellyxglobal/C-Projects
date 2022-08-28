@@ -9,7 +9,7 @@
  
 int main() 
 {
-	int year, month, days_Of_Months, day;
+	int year, month, days_Of_Months, day, weekday;
 
 	//Step: Accept users input
 	printf("\nPlease, enter the year for the calenday\n");
@@ -34,6 +34,13 @@ int main()
 		for (day=1; day<=days_Of_Months; day++)
 		{
 			printf("%5d", day);
+
+			//Using the Logi below to align the days
+			if(++weekday>6)
+			{
+				printf("\n");
+				weekday = 0;
+			}
 		}
 	}
 }
