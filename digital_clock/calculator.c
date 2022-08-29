@@ -3,7 +3,7 @@
 #include <time.h>
 int main()
 {
-        int hour, minute, second;
+        int hour, minute, second, delay;
 
         //Request a user to set the time
         printf("Please, kindly set the time below by entering the values for hour. minutes, and seconds: \n");
@@ -36,7 +36,8 @@ int main()
                         printf("Clock: \n");
                         printf("%02d:%02d:%02d \n", hour,minute,second);//This writes out the time format in 00:00:00
                         system("clear");
-                        delay_ms(1000);
+                        delay(1000);
                 }
         }
 }
+
