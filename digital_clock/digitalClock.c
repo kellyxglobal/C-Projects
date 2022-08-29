@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 int main()
 {
-        int hour, minute, second, delay;
+        int hour, minute, second;
 
         //Request a user to set the time
         printf("Please, kindly set the time below by entering the values for hour. minutes, and seconds: \n");
@@ -35,8 +36,9 @@ int main()
                         }
                         printf("Clock: \n");
                         printf("%02d:%02d:%02d \n", hour,minute,second);//This writes out the time format in 00:00:00
+			usleep(1000);
                         system("clear");
-                        delay(1000);
+                  
                 }
         }
 }
