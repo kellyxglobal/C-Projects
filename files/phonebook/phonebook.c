@@ -118,5 +118,17 @@ void add_employee()
 		return;
 
 	}
+	else
+	{
+		employee emp;
+		accept_input(&emp);
+
+		fwrite(&emp, sizeof(emp), 1, fp);t
+			fflush(stdin);
+		fclose(fptr);
+		system("clear");
+		printf("Employees data is entered successfully\n");
+		printf("Press any key to continue ...\n");
+	}
 
 }
