@@ -1,0 +1,1 @@
+The purpose of this project is to get details of peaple in any organisation. I included a whole lots of features such as viewing all contacts, adding a contact, removing person's contact, searching person's detail of any contact, and deleting all contacts in the phone book
