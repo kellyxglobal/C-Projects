@@ -9,7 +9,7 @@ struct employee
 	char emp_ID_Card;
 	long int emp_Mobile_No;
 	char emp_gender[8];
-	char emp_mail[100];
+	char emp_email[100];
 };
 
 //Here we define a data type for emplyee
@@ -124,11 +124,35 @@ void add_employee()
 		accept_input(&emp);
 
 		fwrite(&emp, sizeof(emp), 1, fp);t
-			fflush(stdin);
+		fflush(stdin);
 		fclose(fptr);
 		system("clear");
 		printf("Employees data is entered successfully\n");
 		printf("Press any key to continue ...\n");
 	}
 
+}
+
+//This function accepts employees information from the add_employee() function above
+void accept_input(employee *emp)
+{
+	system("clear");
+
+	printf("Enter name : ");
+	scanf("%s",emp->emp_Name);
+
+	printf("Enter Employees country code : ");
+	scanf("%s",emp->emp_Country_Code);
+
+	printf("Enter employees ID: ");
+	scanf("%s",emp->emp_ID_Card);
+
+	printf("Enter employees Phone No : ");
+	scanf("%ld",&emp->emp_Mobile_No);
+
+	printf("Enter employees Gender : ");
+	scanf("%s",emp->emp_gender);
+
+	printf("Enter employees email address : ");
+	scanf("%s",emp->emp_mail);
 }
