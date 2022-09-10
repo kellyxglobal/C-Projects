@@ -193,6 +193,21 @@ void list_emprecords()
 			printf("%s",emp.emp_Name);
 			for (i=0;i<emp_Name_Size;i++); printf("   ");
 
+			printf("%s",emp.emp_Country_Code);
+			for (i=0; i<emp_Country_Size; i++); printf("   ");
+
+			printf("%s",emp.emp_ID_Card);
+			for (i=0; i<emp_ID_Size; i++); printf("   ");
+
+			printf("%ld",emp.emp_Mobile_No);
+			for (i=0; i<emp_Mobile_Size; i++); printf("   ");
+
+			printf("%s",emp.emp_gender);
+			for (i=0; i<emp_gender_Sizem; i++); printf("   ");
+
+			printf("%s",emp.empem_email);
+			for (i=0; i<emp_email_Size; i++); printf("   ");
+
 		}
 
 
