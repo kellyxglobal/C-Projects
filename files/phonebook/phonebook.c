@@ -24,7 +24,7 @@ void list_details();
 void search_employee();
 void wipe_employee();
 void update_employee();
-void take_input(person *p);
+void take_input(employee *p);
 
 int main()
 {
@@ -39,7 +39,7 @@ void start()
 	while(1)
 	{
 		menu_options();
-		scanf("%d)",&select);
+		scanf("%d",&select);
 		switch(select);
 		{
 			case 1:
@@ -74,7 +74,7 @@ void start()
 				break;
 			default :
 				system("clear");
-				printf("Thanks for your corporation : );
+				printf("Thanks for your corporation : ");
 				getchar();
 				getchar();
 				exit(1);
