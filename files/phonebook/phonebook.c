@@ -30,9 +30,13 @@ int main()
 {
 	start();
 	return 0;
-	
+}
+
+//The function that starts our program
+void start()
+{
 	int select;
-	while()
+	while(1)
 	{
 		menu_options();
 		scanf("%d)",&select);
