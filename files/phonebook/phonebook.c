@@ -20,7 +20,7 @@ typedef struct employee employee;
 void wipe_all_employees();
 void menu_options();
 void add_employee();
-void list_details();
+void list_emprecords();
 void search_employee();
 void wipe_employee();
 void update_employee();
@@ -43,7 +43,7 @@ void start()
 		switch(select);
 		{
 			case 1:
-				list_details();
+				list_emprecords();
 				getchar();
 				getchar();
 				break;
@@ -155,4 +155,28 @@ void accept_input(employee *emp)
 
 	printf("Enter employees email address : ");
 	scanf("%s",emp->emp_mail);
+}
+
+void list_emprecords()
+{
+
+	system("clear");
+	FILE *fptr;
+	if(fptr = (fopen("employee_db", "rb") == NULL))
+	{
+
+		printf("Error: Failed to open the file, please try again !\n");
+		printf("Press any key to proceed ...\n");
+		return;
+
+	}
+	else
+	{
+
+		employee emp;
+		printf("\n\t\t\t\t************************************************************************************\n\n");
+		printf("\t\t\t\t*			The Records of all XYZ Employees Comapny			*\n");
+		printf("\t\t\t\t**************************************************************************************8\n");
+
+	}
 }
