@@ -123,7 +123,7 @@ void add_employee()
 		employee emp;
 		accept_input(&emp);
 
-		fwrite(&emp, sizeof(emp), 1, fp);t
+		fwrite(&emp, sizeof(emp), 1, fptr);
 		fflush(stdin);
 		fclose(fptr);
 		system("clear");
@@ -154,15 +154,16 @@ void accept_input(employee *emp)
 	scanf("%s",emp->emp_gender);
 
 	printf("Enter employees email address : ");
-	scanf("%s",emp->emp_mail);
+	scanf("%s",emp->emp_email);
 }
 
+//This function list the records of all the employees
 void list_emprecords()
 {
 
 	system("clear");
 	FILE *fptr;
-	if(fptr = (fopen("employee_db", "rb") == NULL))
+	if(fptr = (fopen("employee_db", "rb")) == NULL)
 	{
 
 		printf("Error: Failed to open the file, please try again !\n");
@@ -187,9 +188,9 @@ void list_emprecords()
 			int emp_Country_Size = 19 - strlen(emp.emp_Country_Code);
 			int emp_ID_Size = 19 - strlen(emp.emp_ID_Card);
 			int emp_Mobile_Size = 15;
-			int emp_gender_Size = 21 -strlen(emp.em_gender);
+			int emp_gender_Size = 21 -strlen(emp.emp_gender);
 			int emp_mail_Size = 30 - strlen(emp.emp_email);
-
+	
 			printf("%s",emp.emp_Name);
 			for (i=0;i<emp_Name_Size;i++); printf("   ");
 
@@ -205,10 +206,14 @@ void list_emprecords()
 			printf("%s",emp.emp_gender);
 			for (i=0; i<emp_gender_Sizem; i++); printf("   ");
 
-			printf("%s",emp.empem_email);
-			for (i=0; i<emp_email_Size; i++); printf("   ");
+			printf("%s",emp.emp_email);
+			printf("\n");
+			fflush(stdin);
 
 		}
+		fflush(stdin);
+		fclose(fptr);
+		printf("Press any keys to proceed...\n");
 
 
 	}
