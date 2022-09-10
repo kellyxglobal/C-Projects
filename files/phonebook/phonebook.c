@@ -8,8 +8,8 @@ struct employee
 	char emp_Country_Code[4];
 	char emp_ID_Card;
 	long int emp_Mobile_No;
-	char sex[8];
-	char mail[100];
+	char emp_gender[8];
+	char emp_mail[100];
 };
 
 //Here we define a data type for emplyee
@@ -24,7 +24,7 @@ void list_details();
 void search_employee();
 void wipe_employee();
 void update_employee();
-void take_input(employee *p);
+void accept_input(employee *emp);
 
 int main()
 {
@@ -82,5 +82,25 @@ void start()
 
 	
 	}
+
+}
+
+//A function to display the main menu options
+void menu_options()
+{
+
+	system("clear");
+	printf("\t\t*******************************************************************");
+	printf("\t\t* 		Welcome to the Employees Regidtration Page	      *");
+	printf("\t\t*******************************************************************");
+	printf("\t\t\t1) List Employees Record\n\n");
+	printf("\t\t\t2) Add Employee\n\n");
+	printf("\t\t\t3) Search Employees Details\n\n");
+	printf("\t\t\t4) Delete Employee from DB file\n\n");
+	printf("\t\t\t5) Update Employees Detai\n\nl");
+	printf("\t\t\t6) Delete All Employees Contact\n\n");
+	printf("\t\t\t7) Exit Employees Reg Page\n\n");
+
+	printf("\t\t\t\tEnter your choice as stated above : ");
 
 }
