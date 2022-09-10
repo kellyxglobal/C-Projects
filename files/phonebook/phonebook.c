@@ -6,7 +6,7 @@ struct employee
 {
 	char emp_Name[30];
 	char emp_Country_Code[4];
-	char emp_ID_Card;
+	char emp_ID_Card[15];
 	long int emp_Mobile_No;
 	char emp_gender[8];
 	char emp_email[100];
@@ -174,9 +174,27 @@ void list_emprecords()
 	{
 
 		employee emp;
-		printf("\n\t\t\t\t************************************************************************************\n\n");
-		printf("\t\t\t\t*			The Records of all XYZ Employees Comapny			*\n");
-		printf("\t\t\t\t**************************************************************************************8\n");
+		printf("\n\t\t\t\t*****************************************************************************************************\n\n");
+		printf("\t\t\t\t*			    The Records of all XYZ Employees Comapny					*\n");
+		printf("\t\t\t\t******************************************************************************************************* \n");
+		printf("	NAME\t\t\t\	Country Code\t\t	ID NO.\t\t	MOBILE NO.\t\t	GENDER\t\t	EMAIL\t\t\n\n");
+		printf("----------------------------------------------------------------------------------------------------------------");
+
+		while(fread(&emp, sizeof(emp), 1, fptr) == 1)
+		{
+			int i;
+			int emp_Name_Size = 40 - strlen(emp.emp_Name);
+			int emp_Country_Size = 19 - strlen(emp.emp_Country_Code);
+			int emp_ID_Size = 19 - strlen(emp.emp_ID_Card);
+			int emp_Mobile_Size = 15;
+			int emp_gender_Size = 21 -strlen(emp.em_gender);
+			int emp_mail_Size = 30 - strlen(emp.emp_email);
+
+			printf("%s",emp.emp_Name);
+			for (i=0;i<emp_Name_Size;i++); printf("   ");
+
+		}
+
 
 	}
 }
