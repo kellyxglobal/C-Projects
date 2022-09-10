@@ -104,3 +104,19 @@ void menu_options()
 	printf("\t\t\t\tEnter your choice as stated above : ");
 
 }
+
+
+//This function adds employees information into the employees DB file
+void add_employee()
+{
+	system("clear");
+	FILE *fptr;
+	if(fptr = (fopen("phone_book", "ab+")) == NULL)
+	{
+		printf("Error: The file could not open, try again!\n");
+		printf("Type any key to proceed...\n");
+		return;
+
+	}
+
+}
