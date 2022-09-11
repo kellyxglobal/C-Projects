@@ -295,6 +295,53 @@ void search_employee()
 
 }
 
+void wipe_employee()
+{
 
+	system("clear");
+	long int mobile;
+	printf("PLease enter the employees number you want to delete: ");
+	scanf("%ld", &mobile);
+
+	FILE *fptr,*temporary;
+	temporary = fopen("temp","wb+");
+	if(fptr = (fopen("employee_db", "rb")) ==NULL)
+	{
+
+		printf("Error: Could not open the file...!\n");
+		printf("press any key to proceed\n");
+		return;
+	}
+	else
+	{
+
+		employee emp;
+		int MAX = 0;
+		while(fread(&emp, sizeof(emp), 1, fptr) == 1)
+		{
+
+			if (emp.emp_Mobile_No == mobile)
+			{
+
+				system("clear");
+				printf("Employee is removed succesfully\n");
+				MAX = 1;
+
+			}
+			else
+			{
+
+				fwrite(&emp, sizeof(emp),1,temporary);
+
+
+
+
+			}
+
+		}
+
+	}
+
+}
 
 
