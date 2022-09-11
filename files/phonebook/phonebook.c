@@ -218,3 +218,83 @@ void list_emprecords()
 
 	}
 }
+
+//A function to query employee details from the employees DB file
+void search_employee()
+{
+
+	system("clear");
+	long int mobile;
+	printf("Kindly enter the mobile number of the person that you want to query: ");
+	scanf("%ld",&mobile);
+
+	FILE *fptr;
+	if(fptr = (fopen("employee_db", "rb")) == NULL)
+	{
+
+		printf("Error: the file could not open. Try again please !");
+		printf("Press any key to proceed...\n");
+		return;
+	}
+	else
+	{
+
+		int MAX = 0;
+		employee emp;
+		while (fread(&emp, sizeof(p), 1, fptr) == 1)
+		{
+				
+
+			if(emp.emp_Mobile_No == mobile)
+			{
+
+				 printf("\t\t\t\t******************************************************************************************************* \n");
+                		 printf("        NAME\t\t\t\     Country Code\t\t        ID NO.\t\t      MOBILE NO.\t\t  GENDER\t\t      EMAIL\t\t\n\n");
+               			 printf("----------------------------------------------------------------------------------------------------------------");
+				 int i; 
+				 int emp_Name_Size = 40 - strlen(emp.emp_Name);
+                       		 int emp_Country_Size = 19 - strlen(emp.emp_Country_Code);
+                     	         int emp_ID_Size = 19 - strlen(emp.emp_ID_Card);
+                                 int emp_Mobile_Size = 15;
+                                 int emp_gender_Size = 21 -strlen(emp.emp_gender);
+                                 int emp_mail_Size = 30 - strlen(emp.emp_email);
+				 printf("%s",emp.emp_Name);
+   	                         for (i=0;i<emp_Name_Size;i++); printf("   ");
+
+            	                 printf("%s",emp.emp_Country_Code);
+                     	         for (i=0; i<emp_Country_Size; i++); printf("   ");
+
+                     	         printf("%s",emp.emp_ID_Card);
+                       		 for (i=0; i<emp_ID_Size; i++); printf("   ");
+
+                   	         printf("%ld",emp.emp_Mobile_No);
+                       		 for (i=0; i<emp_Mobile_Size; i++); printf("   ");
+
+                   	         printf("%s",emp.emp_gender);
+                      	         for (i=0; i<emp_gender_Sizem; i++); printf("   ");
+
+                       		 printf("%s",emp.emp_email);
+                        	 printf("\n");
+                     	         
+				 MAX = 1;
+				 break;
+
+			}
+		}
+		if (MAX == 0)
+		{
+
+			system("clear");
+			print("Employee is not in the Database File\n");
+		}
+		fflush(stdin);
+		fclose(fptr);
+		printf("Kindly press any key to continue...\n");
+
+	}
+
+}
+
+
+
+
