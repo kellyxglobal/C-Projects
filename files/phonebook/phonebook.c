@@ -295,6 +295,9 @@ void search_employee()
 
 }
 
+
+
+//A function to delete employee's record/details
 void wipe_employee()
 {
 
@@ -330,14 +333,85 @@ void wipe_employee()
 			}
 			else
 			{
-
 				fwrite(&emp, sizeof(emp),1,temporary);
+				fflush(stdin);
+			}
+
+		}
+		if(MAX == 0)
+		{
+
+			system("clear");
+			printf("No records found for %d mobile number\n",mobile);
+		}
+		fclose(fptr);
+		fclose(temprorary);
+		remove("employee_db");
+		rename("temporary","employee_db");
+		fflush(stdin);
+		printf("press any key to proceed...\n");
+
+	}
+
+}
 
 
+//A function to update employee's details
+void updating_employee()
+{
 
+        system("clear");
+        long int mobile;
+        printf("PLease enter the employees number you want to delete: ");
+        scanf("%ld", &mobile);
+
+        FILE *fptr,*temporary;
+        temporary = fopen("temp","wb+");
+        if(fptr = (fopen("employee_db", "rb")) ==NULL)
+        {
+
+                printf("Error: Could not open the file...!\n");
+                printf("press any key to proceed\n");
+                return;
+        }
+        else
+        {
+
+               
+                int MAX = 0;
+		employee emp;
+                while(fread(&emp, sizeof(emp), 1, fptr) == 1)
+                {
+
+			if(emp.emp_Mobile_No == mobile)
+			{
+
+				accept_input(&emp);
+				fwrite(&emp,sizeof(emp),1,temporary);
+				system("clear");
+				printf("Data updated successfully\n");
+				MAX = 1;
 
 			}
 
+			else
+			{
+
+				fwrite(&emp,sizeof(emp),1,temporary);
+				fflush(stdin);
+			}
+			if(MAX == 0)
+			{
+				system("clear");
+				printf("No record found for %d employee mobile number\n",mobile);
+
+			}
+			fclose(fptr);
+			fclose(temporary);
+			remove("employee_db");
+			rename("temporary","employee_db");
+			fflush(stdin);
+			printf("Press any key to continue...\n");
 		}
 
 	}
@@ -345,3 +419,17 @@ void wipe_employee()
 }
 
 
+
+//A function to purge all employees from the database file
+void wipe_all_employees()
+{
+	char select;
+	system("clear");
+	remove("./employee_db");
+	// printf("Do you really want to delete all employees records? [Y/N]");
+	// scanf("%c",&select);
+	// if(select == 'y' || select == 'Y')
+	// else return;
+	printf("All data in the DB deleted succesfully\n");
+	printf("Press any key to proceed ...\n");
+}
