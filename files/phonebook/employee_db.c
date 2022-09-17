@@ -138,8 +138,9 @@ void accept_input(employee *emp)
 {
 	system("clear");
 
+	getchar();
 	printf("Enter name : ");
-	scanf("%s",emp->emp_Name);
+	scanf("%[^\n]s",emp->emp_Name);
 
 	printf("Enter Employees country code : ");
 	scanf("%s",emp->emp_Country_Code);
