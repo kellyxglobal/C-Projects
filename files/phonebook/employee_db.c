@@ -28,7 +28,7 @@ void accept_input(employee *emp);
 
 int main()
 {
-	start();
+void	start();
 	return 0;
 }
 
@@ -281,6 +281,8 @@ void search_employee()
 				 break;
 
 			}
+			else continue;
+			//fflush(stdin);
 		}
 		if (MAX == 0)
 		{
@@ -290,7 +292,7 @@ void search_employee()
 		}
 		fflush(stdin);
 		fclose(fptr);
-		printf("Kindly press any key to continue...\n");
+		printf("\n\nKindly press any key to continue...\n");
 
 	}
 
@@ -308,7 +310,7 @@ void wipe_employee()
 	scanf("%ld", &mobile);
 
 	FILE *fptr,*temporary;
-	temporary = fopen("temp","wb+");
+	temporary = fopen("temporary","wb+");
 	if((fptr = fopen("employee_db", "rb")) ==NULL)
 	{
 
@@ -333,10 +335,9 @@ void wipe_employee()
 
 			}
 			else
-			{
 				fwrite(&emp, sizeof(emp),1,temporary);
 				fflush(stdin);
-			}
+			
 
 		}
 		if(MAX == 0)
@@ -367,7 +368,7 @@ void update_employee()
         scanf("%ld", &mobile);
 
         FILE *fptr,*temporary;
-        temporary = fopen("temp","wb+");
+        temporary = fopen("temporary","wb+");
         if((fptr = fopen("employee_db", "rb")) ==NULL)
         {
 
@@ -396,11 +397,9 @@ void update_employee()
 			}
 
 			else
-			{
-
 				fwrite(&emp,sizeof(emp),1,temporary);
 				fflush(stdin);
-			}
+		}
 			if(MAX == 0)
 			{
 				system("clear");
@@ -414,8 +413,6 @@ void update_employee()
 			fflush(stdin);
 			printf("Press any key to continue...\n");
 		}
-
-	}
 
 }
 
