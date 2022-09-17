@@ -25,7 +25,6 @@ void search_employee();
 void wipe_employee();
 void update_employee();
 void accept_input(employee *emp);
-
 int main()
 {
 void	start();
