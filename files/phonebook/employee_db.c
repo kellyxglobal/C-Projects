@@ -90,9 +90,9 @@ void menu_options()
 {
 
 	system("clear");
-	printf("\t\t*******************************************************************");
-	printf("\t\t* 		Welcome to the Employees Regidtration Page	      *");
-	printf("\t\t*******************************************************************");
+	printf("\t\t*******************************************************************\n");
+	printf("\t\t* 		Welcome to the Employees Regidtration Page	      *\n");
+	printf("\t\t*******************************************************************\n\n");
 	printf("\t\t\t1) List Employees Record\n\n");
 	printf("\t\t\t2) Add Employee\n\n");
 	printf("\t\t\t3) Search Employees Details\n\n");
