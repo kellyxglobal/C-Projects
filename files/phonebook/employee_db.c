@@ -28,11 +28,10 @@ void accept_input(employee *emp);
 
 int main()
 {
-void	start()
-{
+void	start();
 	return 0;
 }
-}
+
 //The function that starts our program
 void start()
 {
@@ -41,7 +40,7 @@ void start()
 	{
 		menu_options();
 		scanf("%d",&select);
-		switch(select);
+		switch(select)
 		{
 			case 1:
 				list_emprecords();
@@ -112,7 +111,7 @@ void add_employee()
 {
 	system("clear");
 	FILE *fptr;
-	if(fptr = (fopen("phone_book", "ab+")) == NULL)
+	if((fptr = fopen("employee_db", "ab+")) == NULL)
 	{
 		printf("Error: The file could not open, try again!\n");
 		printf("Type any key to proceed...\n");
@@ -164,7 +163,7 @@ void list_emprecords()
 
 	system("clear");
 	FILE *fptr;
-	if(fptr = (fopen("employee_db", "rb")) == NULL)
+	if((fptr = fopen("employee_db", "rb")) == NULL)
 	{
 
 		printf("Error: Failed to open the file, please try again !\n");
@@ -176,10 +175,10 @@ void list_emprecords()
 	{
 
 		employee emp;
-		printf("\n\t\t\t\t*****************************************************************************************************\n\n");
+		printf("\n\t\t\t\t*****************************************************************************************************\n");
 		printf("\t\t\t\t*			    The Records of all XYZ Employees Comapny					*\n");
-		printf("\t\t\t\t******************************************************************************************************* \n");
-		printf("	NAME\t\t\t\	Country Code\t\t	ID NO.\t\t	MOBILE NO.\t\t	GENDER\t\t	EMAIL\t\t\n\n");
+		printf("\t\t\t\t*******************************************************************************************************\n\n\n");
+		printf("	NAME\t\t\t\t	Country Code\t\t	ID NO\t\t	MOBILE NO\t\t	GENDER\t\t	EMAIL\n");
 		printf("----------------------------------------------------------------------------------------------------------------");
 
 		while(fread(&emp, sizeof(emp), 1, fptr) == 1)
@@ -205,7 +204,7 @@ void list_emprecords()
 			for (i=0; i<emp_Mobile_Size; i++); printf("   ");
 
 			printf("%s",emp.emp_gender);
-			for (i=0; i<emp_gender_Sizem; i++); printf("   ");
+			for (i=0; i<emp_gender_Size; i++); printf("   ");
 
 			printf("%s",emp.emp_email);
 			printf("\n");
@@ -230,7 +229,7 @@ void search_employee()
 	scanf("%ld",&mobile);
 
 	FILE *fptr;
-	if(fptr = (fopen("employee_db", "rb")) == NULL)
+	if((fptr = fopen("employee_db", "rb")) == NULL)
 	{
 
 		printf("Error: the file could not open. Try again please !");
@@ -242,7 +241,7 @@ void search_employee()
 
 		int MAX = 0;
 		employee emp;
-		while (fread(&emp, sizeof(p), 1, fptr) == 1)
+		while (fread(&emp, sizeof(emp), 1, fptr) == 1)
 		{
 				
 
@@ -250,7 +249,7 @@ void search_employee()
 			{
 
 				 printf("\t\t\t\t******************************************************************************************************* \n");
-                		 printf("        NAME\t\t\t\     Country Code\t\t        ID NO.\t\t      MOBILE NO.\t\t  GENDER\t\t      EMAIL\t\t\n\n");
+                		 printf("        NAME\t\t\t\t     Country Code\t\t        ID NO.\t\t      MOBILE NO.\t\t  GENDER\t\t      EMAIL\t\t\n\n");
                			 printf("----------------------------------------------------------------------------------------------------------------");
 				 int i; 
 				 int emp_Name_Size = 40 - strlen(emp.emp_Name);
@@ -272,7 +271,7 @@ void search_employee()
                        		 for (i=0; i<emp_Mobile_Size; i++); printf("   ");
 
                    	         printf("%s",emp.emp_gender);
-                      	         for (i=0; i<emp_gender_Sizem; i++); printf("   ");
+                      	         for (i=0; i<emp_gender_Size; i++); printf("   ");
 
                        		 printf("%s",emp.emp_email);
                         	 printf("\n");
@@ -286,7 +285,7 @@ void search_employee()
 		{
 
 			system("clear");
-			print("Employee is not in the Database File\n");
+			printf("Employee is not in the Database File\n");
 		}
 		fflush(stdin);
 		fclose(fptr);
@@ -309,7 +308,7 @@ void wipe_employee()
 
 	FILE *fptr,*temporary;
 	temporary = fopen("temp","wb+");
-	if(fptr = (fopen("employee_db", "rb")) ==NULL)
+	if((fptr = fopen("employee_db", "rb")) ==NULL)
 	{
 
 		printf("Error: Could not open the file...!\n");
@@ -343,10 +342,10 @@ void wipe_employee()
 		{
 
 			system("clear");
-			printf("No records found for %d mobile number\n",mobile);
+			printf("No records f.ound for %ld mobile number\n",mobile);
 		}
 		fclose(fptr);
-		fclose(temprorary);
+		fclose(temporary);
 		remove("employee_db");
 		rename("temporary","employee_db");
 		fflush(stdin);
@@ -368,7 +367,7 @@ void updating_employee()
 
         FILE *fptr,*temporary;
         temporary = fopen("temp","wb+");
-        if(fptr = (fopen("employee_db", "rb")) ==NULL)
+        if((fptr = fopen("employee_db", "rb")) ==NULL)
         {
 
                 printf("Error: Could not open the file...!\n");
@@ -404,7 +403,7 @@ void updating_employee()
 			if(MAX == 0)
 			{
 				system("clear");
-				printf("No record found for %d employee mobile number\n",mobile);
+				printf("No record found for %ld employee mobile number\n",mobile);
 
 			}
 			fclose(fptr);
