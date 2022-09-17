@@ -214,7 +214,7 @@ void list_emprecords()
 		}
 		fflush(stdin);
 		fclose(fptr);
-		printf("Press any keys to proceed...\n");
+		printf("\n\nPress any keys to proceed...\n");
 
 
 	}
