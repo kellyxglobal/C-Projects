@@ -28,7 +28,7 @@ void accept_input(employee *emp);
 
 int main()
 {
-void	start();
+	start();
 	return 0;
 }
 
