@@ -357,7 +357,7 @@ void wipe_employee()
 
 
 //A function to update employee's details
-void updating_employee()
+void update_employee()
 {
 
         system("clear");
