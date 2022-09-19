@@ -280,7 +280,7 @@ void search_employee()
 				 break;
 
 			}
-			else continue;
+			//else continue;
 			//fflush(stdin);
 		}
 		if (MAX == 0)
