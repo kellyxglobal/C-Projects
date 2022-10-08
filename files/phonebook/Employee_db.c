@@ -17,6 +17,7 @@ typedef struct employee employee;
 
 
 //function declarations
+void start();
 void wipe_all_employees();
 void menu_options();
 void add_employee();
@@ -27,7 +28,7 @@ void update_employee();
 void accept_input(employee *emp);
 int main()
 {
-void	start();
+	start();
 	return 0;
 }
 
